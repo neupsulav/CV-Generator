@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Generator</title>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- fontawesome cdn link -->
+    <script src="https://kit.fontawesome.com/e314d73a0d.js" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container" id="CV-form">
+        <h1 class="text-center">CV Generator</h1>
+        <p class="text-center">Fill up the form and generate your CV</p>
+
+        <div class="row mt-5">
+            <div class="col-md-6">
+
+                <!-- personal information -->
+                <h3 class="text-center">Personal information</h3>
+
+                <!-- name field  -->
+                <div class="form-group">
+                    <label for="namefield">Your Name</label>
+                    <input type="text" id="namefield" class="form-control" placeholder="Eg: Issac Newton">
+
+                </div>
+
+                <!-- Birth date  -->
+                <div class="form-group mt-3">
+                    <label for="birthdatefield">Your Birth date</label>
+                    <input type="text" id="birthdatefield" class="form-control" placeholder="Eg: August 14,1994">
+
+                </div>
+
+                <!-- Mail ID  -->
+                <div class="form-group mt-3">
+                    <label for="mailfield">Your E-mail ID</label>
+                    <input type="text" id="mailfield" class="form-control" placeholder="Eg: newton@gmail.com">
+
+                </div>
+
+                <!-- contact field  -->
+                <div class="form-group mt-3">
+                    <label for="contactfield">Your Phone Number</label>
+                    <input type="text" id="contactfield" class="form-control" placeholder="Eg: +977-9876543210">
+
+                </div>
+
+                <!-- Address field  -->
+                <div class="form-group mt-3">
+                    <label for="addressfield">Your Address</label>
+                    <textarea type="text" id="addressfield" class="form-control"
+                        placeholder="Eg: Rajmarga Chauraha, Butwal"></textarea>
+                </div>
+
+                <!-- Skills -->
+                <div class="form-group mt-3 skill">
+                    <label for="skills">Your Skills</label>
+                    <input type="text" rows="3" id="skills" class="form-control Sklobj" placeholder="Enter your skills">
+
+                    <!-- new textarea -->
+
+                    <!-- add button  -->
+                    <div class="container text-center mt-2 addbuttonforSKL">
+                        <button onclick="getNewSkillField()" class="btn btn-dark btn-sm">Add</button>
+                    </div>
+                </div>
+
+                <!-- Personal Values -->
+                <div class="form-group mt-3 personalvalues">
+                    <label for="personalvalue">Personal Values</label>
+                    <input type="text" rows="3" id="personalvalue" class="form-control PVobj"
+                        placeholder="Enter your personal values">
+
+                    <!-- new textarea -->
+
+                    <!-- add button  -->
+                    <div class="container text-center mt-2 addbuttonforPV">
+                        <button onclick="getNewPersonalValField()" class="btn btn-dark btn-sm">Add</button>
+                    </div>
+                </div>
+
+                <!-- Expertise  -->
+                <div class="form-group mt-3 expertise">
+                    <label for="expertise">Expertise</label>
+                    <input type="text" rows="3" id="expertise" class="form-control Exobj"
+                        placeholder="Enter your Expertise">
+
+                    <!-- new textarea -->
+
+                    <!-- add button  -->
+                    <div class="container text-center mt-2 addbuttonforExpertise">
+                        <button onclick="getNewExpertiseField()" class="btn btn-dark btn-sm">Add</button>
+                    </div>
+                </div>
+
+                <!-- Language  -->
+                <div class="form-group mt-3 language">
+                    <label for="language">Language</label>
+                    <input type="text" rows="3" id="language" class="form-control Lgobj"
+                        placeholder="Enter languages you know">
+
+                    <!-- new textarea -->
+
+                    <!-- add button  -->
+                    <div class="container text-center mt-2 addbuttonforLanguage">
+                        <button onclick="getNewLanguageField()" class="btn btn-dark btn-sm">Add</button>
+                    </div>
+                </div>
+
+                <!-- Interests  -->
+                <div class="form-group mt-3 interests">
+                    <label for="interests">Interests</label>
+                    <input type="text" rows="3" id="interests" class="form-control Inobj"
+                        placeholder="Enter your interests">
+
+                    <!-- new textarea -->
+
+                    <!-- add button  -->
+                    <div class="container text-center mt-2 addbuttonforInterests">
+                        <button onclick="getNewInterestsField()" class="btn btn-dark btn-sm">Add</button>
+                    </div>
+                </div>
+
+                <!-- Important links -->
+                <!-- <p class="text-secondary mt-3">Important Links</p> -->
+
+                <!-- facebook field  -->
+                <!-- <div class="form-group mt-3">
+                    <label for="facebookfield">Facebook</label>
+                    <input type="text" id="facebookfield" class="form-control">
+
+                </div> -->
+
+                <!-- instagram field  -->
+                <!-- <div class="form-group mt-3">
+                    <label for="instafield">Instagram</label>
+                    <input type="text" id="instafield" class="form-control">
+
+                </div> -->
+
+                <!-- Github feild  -->
+                <!-- <div class="form-group mt-3">
+                    <label for="githubfield">Github</label>
+                    <input type="text" id="githubfield" class="form-control">
+
+                </div> -->
+
+
+            </div>
+            <div class="col-md-6">
+
+                <!-- professional information -->
+                <h3 class="text-center">Professional Information</h3>
+
+                <!-- objective field  -->
+                <div class="form-group mt-3">
+                    <label for="Objectivefield">Objective</label>
+                    <textarea type="text" rows="5" id="Objectivefield" class="form-control"
+                        placeholder="Eg: Info about you"></textarea>
+                </div>
+
+                <!-- work experience -->
+                <div class="form-group mt-3 workExperience">
+                    <label for="workexperience">Work Experience</label>
+                    <textarea type="text" rows="3" id="workexperience" class="form-control WEobj"
+                        placeholder="Enter your work experience"></textarea>
+
+                    <!-- new textarea -->
+
+                    <!-- add button  -->
+                    <div class="container text-center mt-2 addbuttonforWE">
+                        <button onclick="getNewWorkExpField()" class="btn btn-dark btn-sm">Add</button>
+                    </div>
+                </div>
+
+
+
+                <!-- Academic Qualification -->
+                <div class="form-group mt-3 academicqualification">
+                    <label for="academicqualification">Academic Qualification</label>
+                    <textarea type="text" rows="3" id="academicqualification" class="form-control AQobj"
+                        placeholder="Enter your Academic Qualification"></textarea>
+
+                    <!-- new textarea -->
+
+                    <!-- add button  -->
+                    <div class="container text-center mt-2 addbuttonforAQ">
+                        <button onclick='getNewAcadQualField()' class="btn btn-dark btn-sm">Add</button>
+                    </div>
+                </div>
+
+                <!-- image  -->
+                <div class="form-group mt-3">
+                    <label for="displayimage">Select your photo</label>
+                    <br>
+                    <input type="file" id="displayimage" accept="image/png,image/jpg">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container text-center mt-5">
+            <button onclick="generateCVFunction()" class="btn btn-dark btn-lg">Generate CV</button>
+        </div>
+    </div>
+
+    <div class="container2" id="CV-section">
+        <div class="hello-text">
+            <p>HELLO,</p>
+        </div>
+        <div class="firstcolumn">
+
+
+            <div class="image">
+                <img src="" alt="Display Image" id="myimg">
+            </div>
+
+            <div>
+                <h3 class="name fs-1 mt-2"></h3>
+            </div>
+
+            <div class="info mt-2">
+                <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, magnam iusto error nisi
+                    eos ut aperiam quisquam soluta architecto dicta?</p> -->
+            </div>
+
+            <p class="skilltext">SKILLS</p>
+            <div class="skills">
+
+                <div id="skillsname">
+                    <!-- <p>Adobe XD</p>
+                    <p>Figma</p>
+                    <p>Photoshop</p>
+                    <p>Illustrator</p>
+                    <p>HTML</p> -->
+                </div>
+
+                <!-- <div class="skillbar">
+                    <div class="skilldiv">
+
+                        <div class="skillset-1">
+                            <div class="skill-1">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skilldiv">
+
+                        <div class="skillset-2">
+                            <div class="skill-2">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skilldiv">
+
+                        <div class="skillset-3">
+                            <div class="skill-3">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skilldiv">
+
+                        <div class="skillset-4">
+                            <div class="skill-4">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skilldiv">
+
+                        <div class="skillset-5">
+                            <div class="skill-5">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div> -->
+
+
+            </div>
+
+            <h5 class="mt-4 fw-bold">Work Experiences</h5>
+            <div class="work mb-5">
+
+                <!-- <p class="worktext">WORK</p>
+
+                <div class="work-1">
+                    <p class="presenttext">present</p>
+                    <p class="work-1a">Soft Net INC</p>
+                    <p class="work-1b">Creative Head</p>
+                    <p class="work-1c">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, nulla?</p>
+                </div>
+
+                <div class="work-2">
+                    <p class="yearstext">3 years</p>
+                    <p class="work-2a">HD design studio</p>
+                    <p class="work-2b">UI designer</p>
+                    <p class="work-2c">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, optio.
+                    </p>
+                </div>
+
+                <div class="work-3">
+                    <p class="timetext">1 year-3 months</p>
+                    <p class="work-3a">Papercos private limited</p>
+                    <p class="work-3b">Jr.designer</p>
+                    <p class="work-3c">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+                        incidunt.</p>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="secondcolumn">
+            <div class="data-1">
+                <p id="birth"></p>
+                <p id="mail"></p>
+                <p id="phoneNo"></p>
+                <p id="address"></p>
+                <!-- <div class="icons">
+                    <a href="https://github.com/neupsulav" target="_blank" id="githubicon"><i class="fab fa-github"></i>
+                        Github</a>
+                    <a href="https://www.facebook.com/neupsulav" target="_blank" id="facebookicon"><i
+                            class="fab fa-facebook">
+                            Facebook</i></a>
+                    <a href="https://www.instagram.com/neupsulav/" target="_blank" id="instagramicon"><i
+                            class="fab fa-instagram">
+                            Instagram</i></a>
+                </div> -->
+            </div>
+
+            <div class="data-3">
+                <p class="data-3a">PERSONAL VALUES</p>
+                <div id="personalvaluesdiv"></div>
+            </div>
+
+            <div class="data-4">
+                <p class="data-4a">EXPERTISE</p>
+                <div id="expertisevaluediv"></div>
+            </div>
+
+            <div class="data-5">
+                <p class="data-5a">LANGUAGES</p>
+                <div id="languagevaluediv"></div>
+            </div>
+
+            <div class="data-6">
+                <p class="data-6a">INTEREST</p>
+                <div id="interestvaluediv"></div </div>
+
+                <div>
+                    <p class="fw-bold">ACADEMIC QUALIFICATION</p>
+                    <div id="academicqualificationsdiv"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- print CV button  -->
+    <div class="container text-center mt-5 mb-5" id="printcvbtn">
+        <button onclick="window.print()" class="btn btn-dark btn-lg">Print CV</button>
+    </div>
+
+    <div class="card text-center">
+        <div class="card-header">
+            Version 1.0
+        </div>
+        <div class="card-body">
+            <h5 class="card-title fw-bold fs-2">Auto CV Generator</h5>
+            <p class="card-text">Making your professional life easier</p>
+            <!-- <a href="#" class="btn btn-dark">Go somewhere</a> -->
+        </div>
+        <div class="card-footer text-muted">
+            Developed by Sulav Neupane
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
